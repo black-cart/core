@@ -1,0 +1,43 @@
+{
+  "name": "black-cart/core",
+  "description": "Free Laravel e-commerce for business",
+  "keywords": ["laravel ecommerce", "black-cart", "BlackCart ecommerce"],
+  "license": "MIT",
+  "authors": [
+      {
+          "name": "Hao Ngo",
+          "email": "haongolog@gmail.com"
+      }
+  ],
+  "require": {
+      "php": "^7.4|^8.0",
+      "laravel/framework": "^8.0",
+      "unisharp/laravel-filemanager": "^2.2",
+      "spatie/laravel-pjax": "^2.1",
+      "phpoffice/phpspreadsheet": "^1.16",
+      "spatie/laravel-json-api-paginate": "^1.10",
+      "spatie/db-dumper": "^2.18",
+      "google/apiclient": "^2.0"
+  },
+  "autoload": {
+      "psr-4": {
+         "BlackCart\\Core\\": "src/"
+      }
+  },
+  "extra": {
+      "laravel": {
+          "dont-discover": [
+          ],
+          "providers": [
+            "BlackCart\\Core\\BlackCartServiceProvider",
+            "UniSharp\\LaravelFilemanager\\LaravelFilemanagerServiceProvider"
+          ],
+          "aliases": {
+            "Export" : "BlackCart\\Core\\Library\\ProcessData\\Export",
+            "ProcessData" : "BlackCart\\Core\\Library\\ProcessData\\Boot",
+            "Cart" : "BlackCart\\Core\\Library\\ShoppingCart\\Facades\\Cart",
+            "Admin" : "BlackCart\\Core\\Admin\\Admin"
+          }
+      }
+  }
+}
